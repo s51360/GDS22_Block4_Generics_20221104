@@ -1,11 +1,11 @@
 package org.campus02.thenewsocialmedia;
 
-public class MayBeCreditCardNumber {
-    private String creditCardNumber;
+public class MayBe<T> {
+    private T value;
     // private AccessRoles neededAccessRole;
 
-    public MayBeCreditCardNumber(String creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
+    public MayBe(T value) {
+        this.value = value;
         // this.neededAccessRole = AccessRoles.ExternalUser;
     }
 
@@ -34,7 +34,7 @@ public class MayBeCreditCardNumber {
         switch (accesor) {
             case Platform:
             case Self:
-                System.out.println(creditCardNumber);
+                System.out.println(value);
                 break;
             case ExternalUser:
             case RegisteredCustomer:
@@ -42,7 +42,7 @@ public class MayBeCreditCardNumber {
                 System.out.println("forbidden");
                 break;
             default:
-                System.out.println("not allowed");
+                System.out.println("not allowed"); //jenes was wir nicht mit case abgebildet haben, fangen wir bei defualt ab
         }
 
         // Bei Klausur wäre das eher für einen 1er, ansonsten kann man auch mit if implementieren
